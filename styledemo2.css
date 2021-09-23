@@ -1,0 +1,29 @@
+*{ margin: 0; padding: 0; box-sizing: border-box;}
+
+#container {
+    width: 900px;
+    height: 600px;
+    margin: 0 auto;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.vid-btn {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: lightgreen;
+    text-align: center;
+    line-height: 100px;
+    color: red;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    display: inline-block;
+    transition: all 0.7s;
+}
+
+.vid-btn:hover {
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+
+
