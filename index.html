@@ -23,9 +23,17 @@
                     <i class="fas fa-play"></i>
                 </div>
 
-                <div id="mute-btn" class="vid-btn" onclick="muteVol()"><i class="fas fa-volume-mute"></i></div>
+                <div id="mute-btn" class="vid-btn" onclick="muteVol()" ><i class="fas fa-volume-mute"></i></div>
 
                 <div id="fs-btn" class="vid-btn" onclick="fsMode()"><i class="fas fa-expand"></i></div>
+
+                <div id="playback">
+                    <h3>Playback Rate</h3>
+                    <br/>
+                    <div id="pb-btn" onclick="pbMode(1)"><<</div>
+                    <p id="pbRate">1.0</p>
+                    <div id="pb-btn" onclick="pbMode(2)">>></div>
+                </div>
 
             </div>
 
@@ -36,6 +44,19 @@
                 <div id="vol-bar">
                     <div id="vol-left"></div>
                 </div>
+
+                <!-- <div id="vol-bar2">
+                    <div class="bar1" style="height: 10%;" id="white-bar"></div>
+                    <div class="bar2" style="height: 20%;" id="white-bar"></div>
+                    <div class="bar3" style="height: 30%;"id="white-bar"></div>
+                    <div class="bar4" style="height: 40%;"id="white-bar"></div>
+                    <div class="bar5" style="height: 50%;"id="white-bar"></div>
+                    <div class="bar6" style="height: 60%;"id="white-bar"></div>
+                    <div class="bar7" style="height: 70%;"id="white-bar"></div>
+                    <div class="bar8" style="height: 80%;"id="white-bar"></div>
+                    <div class="bar9" style="height: 90%;"id="white-bar"></div>
+                    <div class="bar10" style="height: 100%;"id="white-bar"></div>
+                </div> -->
 
                 <div class="vid-btn" onclick="updateVol(0.1)"><i class="fas fa-volume-up"></i></div>
             </div>

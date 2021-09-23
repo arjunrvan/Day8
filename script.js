@@ -6,6 +6,10 @@ var isMute = false;
 
 var vidSelect = 1;
 
+var pbSelect = 1;
+
+// var uBar = 10;
+
 function updateVol (num) {
     vol += num;
 
@@ -15,12 +19,25 @@ function updateVol (num) {
         vol = 0;
     } 
 
-    console.log(vol);
+    // console.log(vol);
     // update video element
     video.volume = vol;
 
     document.getElementById('vol-left').style.width = (vol*500) + 'px';
-   
+
+    // uBar += (num*10);
+
+    // if (uBar > 10) {
+    //     uBar = 10;
+    // } else if (uBar < 1) {
+    //     uBar = 1;
+    // }
+
+    // for (i = uBar; i > 0; i--) {
+    //     console.log('bar'+i);
+    //     document.getElementsByClassName('bar'+i).style.width = '40px';
+        
+    // }  
 }
 
 function playAlt () {
@@ -66,13 +83,14 @@ function vidSwap (btnName) {
         vidSelect += 1;
     }     
 
-    // Ensure videos are between the 3 selected
+    // Ensure videoSelect is between 1-3
     if (vidSelect > 3) {
         vidSelect = 1;
     } else if (vidSelect < 1) {
         vidSelect = 3;
     }
 
+    // Assign video to number
     if (vidSelect == 1) {
         video.src = 'movie.mp4';
     } else if (vidSelect == 2) {
@@ -80,4 +98,24 @@ function vidSwap (btnName) {
     } else if (vidSelect == 3) {
         video.src = 'movie3.mp4';
     }
+}
+
+function pbMode (btnName) {
+
+    // Check if reduce or increase is pressed 
+    if (btnName == 1) {
+        pbSelect -= 0.25;
+    } else if (btnName == 2) {
+        pbSelect += 0.25;
+    }   
+    
+    // Ensure pbSelect is between 0-3
+    if (pbSelect > 3) {
+        pbSelect = 3;
+    } else if (pbSelect < 0) {
+        pbSelect = 0;
+    }
+
+    video.playbackRate = pbSelect;
+    document.getElementById('pbRate').innerHTML = pbSelect;
 }
