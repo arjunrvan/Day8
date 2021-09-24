@@ -8,7 +8,7 @@ var vidSelect = 1;
 
 var pbSelect = 1;
 
-// var uBar = 10;
+var uBar = 10;
 
 function updateVol (num) {
     vol += num;
@@ -23,21 +23,35 @@ function updateVol (num) {
     // update video element
     video.volume = vol;
 
-    document.getElementById('vol-left').style.width = (vol*500) + 'px';
+    // document.getElementById('vol-left').style.width = (vol*500) + 'px';
 
-    // uBar += (num*10);
+    
 
-    // if (uBar > 10) {
-    //     uBar = 10;
-    // } else if (uBar < 1) {
-    //     uBar = 1;
-    // }
+    uBar += (num*10);
 
-    // for (i = uBar; i > 0; i--) {
-    //     console.log('bar'+i);
-    //     document.getElementsByClassName('bar'+i).style.width = '40px';
+    if (uBar > 10) {
+        uBar = 10;
+    } else if (uBar < 1) {
+        uBar = 1;
+    }
+
+    // document.getElementById('white-bar').style.backgroundColor = 'blue';
+
+    if (num<0) {
         
-    // }  
+        var i = uBar + 1;
+
+        document.getElementById('bar'+i).style.opacity=0;
+
+    } 
+
+    if (num>=0) { 
+        
+        document.getElementById('bar'+uBar).style.opacity = 1;
+    
+    }
+
+    
 }
 
 function playAlt () {
